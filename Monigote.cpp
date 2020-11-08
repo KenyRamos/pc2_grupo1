@@ -5,7 +5,7 @@ Monigote::Monigote()
 }
 Monigote::Monigote(int px, int py, Bitmap^ bmp): Entidad()
 {
-	w = bmp->Width / 3;
+	w = bmp->Width / 9;
 	h = bmp->Height / 4;
 	f = c = 0;
 }
