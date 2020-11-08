@@ -13,6 +13,12 @@ void Monigote::Mostrar (Graphics^ g, Bitmap^ bmp)
 {
 	Rectangle porcion = Rectangle(IDx * ancho, accion * alto, ancho, alto);
 	g->DrawImage(bmp, Area(), porcion, GraphicsUnit::Pixel);
+
+	if (dx != 0 || dy != 0)
+	{
+		if (accion >= CaminarArriba && accion <= CaminarAbajo)
+			IDx = (IDx + 1) % 9;
+	}
 }
 
 void Monigote::SetAccion(SpriteMonigote value){

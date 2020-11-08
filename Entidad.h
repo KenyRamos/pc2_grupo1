@@ -7,7 +7,7 @@ protected:
 	int x, y;
 	int dx, dy;
 	int ancho, alto;
-	int IDx;
+	int IDx; // indice de la posicion de la imagen (x,y)
 public:
 	Entidad() {
 		x = y = 0;
