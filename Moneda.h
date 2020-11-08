@@ -2,8 +2,14 @@
 #include "Dependencias.h"
 #include "Entidad.h"
 
-class Moneda
+class Moneda : public Entidad
 {
+private:
+
+public:
+	Moneda();
+
+	~Moneda();
 
 };
 

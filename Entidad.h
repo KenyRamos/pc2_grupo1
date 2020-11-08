@@ -27,5 +27,6 @@ public:
 	virtual void Mover(Graphics^ g);
 	virtual void Mostrar(Graphics^ g, Bitmap^ img);
 	Rectangle Area();
+	~Entidad();
 };
 
