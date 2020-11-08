@@ -67,6 +67,14 @@ public:
 	{
 		alto = value;
 	}
+	Rectangle Area()
+	{
+		return Rectangle(x, y, ancho, alto);
+	}
+	Rectangle NextArea()
+	{
+		return Rectangle(x + dx, y + dy, ancho, alto);
+	}
 	virtual void Mover(Graphics^ g)
 	{
 		x += dx;
