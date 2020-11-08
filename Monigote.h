@@ -13,6 +13,7 @@ enum SpriteMonigote
 class Monigote : public Entidad
 {
 private:
+	int f, c;
 	
 	SpriteMonigote accion;
 
