@@ -118,17 +118,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArregloMonedas.cpp" />
+    <ClCompile Include="ArregloObstaculos.cpp" />
     <ClCompile Include="Entidad.cpp" />
+    <ClCompile Include="Moneda.cpp" />
     <ClCompile Include="Monigote.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Obstaculo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArregloMonedas.h" />
+    <ClInclude Include="ArregloObstaculos.h" />
     <ClInclude Include="Dependencias.h" />
     <ClInclude Include="Entidad.h" />
+    <ClInclude Include="Moneda.h" />
     <ClInclude Include="Monigote.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Obstaculo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
