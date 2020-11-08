@@ -85,9 +85,9 @@ public:
 	{
 		g->FillRectangle(Brushes::Black, x, y, ancho, alto);
 	}
-	Rectangle Area()
-	{
-		return Rectangle(x, y, ancho, alto);
-	}
+	//Rectangle Area()
+	//{
+	//	return Rectangle(x, y, ancho, alto);
+	//}
 };
 

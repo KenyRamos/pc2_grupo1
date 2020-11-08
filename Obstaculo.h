@@ -5,16 +5,15 @@
 class Obstaculo : public Entidad
 {
 public:
-	Obstaculo(Bitmap^ img) : Entidad()
+	Obstaculo() : Entidad()
 	{
 		x = 0;
 		y = 0;
-
-		ancho = img->Width;
-		alto = img->Height;
 	}
 	void Mostrar(Graphics^ g, Bitmap^ img)
 	{
+		int ancho = img->Width;
+		int alto = img->Height;
 		g->DrawImage(img, Area());
 	}
 

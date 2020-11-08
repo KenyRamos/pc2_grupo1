@@ -9,7 +9,7 @@ public:
 	ArregloObstaculos(int n, Rectangle obj, Bitmap^ img){
 		for (int i = 0; i < n; i++)
 		{
-			Obstaculo* obs = new Obstaculo(img);
+			Obstaculo* obs = new Obstaculo();
 			if (obs->Area().IntersectsWith(obj) == false && Colision(obs->Area()) == false)
 				arr.push_back(obs);
 			else
