@@ -1,5 +1,5 @@
 #pragma once
-#include <Dependencias.h>
+#include "Dependencias.h"
 
 class Entidad
 {
