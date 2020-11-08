@@ -8,7 +8,6 @@ private:
 
 public:
 	Moneda();
-
 	~Moneda();
 
 };
