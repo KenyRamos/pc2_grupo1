@@ -108,6 +108,7 @@ namespace Project3 {
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMonigote))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbFondo))->EndInit();
 			this->ResumeLayout(false);
@@ -233,5 +234,16 @@ namespace Project3 {
 //}
 //private: System::ComponentModel::IContainer^ components;
 //private: System::Windows::Forms::PictureBox^ pbMonigote;
+private: System::Void MyForm_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+
+	if (e->KeyData == Keys::Up)
+		pMonigote->SetAccion(SpriteMonigote::CaminarArriba);
+	if (e->KeyData == Keys::Down)
+		pMonigote->SetAccion(SpriteMonigote::CaminarAbajo);
+	if (e->KeyData == Keys::Left)
+		pMonigote->SetAccion(SpriteMonigote::CaminarIzquierda);
+	if (e->KeyData == Keys::Right)
+		pMonigote->SetAccion(SpriteMonigote::CaminarDerecha);
+}
 };
 }
