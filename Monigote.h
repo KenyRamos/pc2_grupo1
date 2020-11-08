@@ -1,5 +1,10 @@
 #pragma once
-class Monigote
+class Monigote //: public Entidad
 {
+private:
+	
+
+public:
+
 };
 
