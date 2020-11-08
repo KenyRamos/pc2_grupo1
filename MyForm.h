@@ -34,12 +34,15 @@ namespace Project3 {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Timer^ timer1;
+	protected:
+	private: System::ComponentModel::IContainer^ components;
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -48,12 +51,28 @@ namespace Project3 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->components = (gcnew System::ComponentModel::Container());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->SuspendLayout();
+			// 
+			// timer1
+			// 
+			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(284, 261);
+			this->Name = L"MyForm";
+			this->Text = L"MyForm";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	
+	
+	}
 	};
 }

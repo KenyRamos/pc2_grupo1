@@ -4,5 +4,11 @@
 
 class Moneda
 {
+private:
+
+public:
+	Moneda();
+	~Moneda();
+
 };
 

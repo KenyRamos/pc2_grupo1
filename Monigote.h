@@ -19,10 +19,8 @@ private:
 public:
 	Monigote(Bitmap^ img);
 	Monigote(int px, int py, Bitmap^ bmp);
-	void SetAccion(SpriteMonigote value);
-	void Mostrar(Graphics^ g, Bitmap^ bmp);
-	void Mover(Graphics^ g);
-
-	
+	void Dibujar(Graphics^ g, Bitmap^ bmp);
+	int retornar_ancho() { return w; }
+	int retornar_alto() { return h; }
 };
 
