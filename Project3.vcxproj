@@ -118,10 +118,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Entidad.cpp" />
     <ClCompile Include="Monigote.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Dependencias.h" />
+    <ClInclude Include="Entidad.h" />
     <ClInclude Include="Monigote.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
