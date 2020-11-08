@@ -3,9 +3,6 @@
 
 class Monigote : public Entidad
 {
-private:
-	int w, h, f, c;
-
 public:
 	Monigote();
 	Monigote(int px, int py, Bitmap^ bmp);
