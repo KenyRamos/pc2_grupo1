@@ -1,12 +1,33 @@
 #pragma once
 #include "Entidad.h"
+enum SpriteMonigote
+{
+	CaminarArriba,
+	CaminarIzquierda,
+	CaminarAbajo,
+	CaminarDerecha,
+
+	Morir
+};
 
 class Monigote : public Entidad
 {
+private:
+	int f, c;
+	
+	SpriteMonigote accion;
+
 public:
-	Monigote();
+	Monigote(Bitmap^ img);
 	Monigote(int px, int py, Bitmap^ bmp);
-	void Dibujar(Graphics^ g, Bitmap^ bmp);
-	int retornar_ancho() { return w; }
-	int retornar_alto() { return h; }
+	void SetAccion(SpriteMonigote value);
+	void Mostrar(Graphics^ g, Bitmap^ bmp);
+	void Mover(Graphics^ g);
+
+	
 };
+
+
+	
+
+
