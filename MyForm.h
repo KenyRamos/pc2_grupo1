@@ -35,6 +35,7 @@ namespace Project3 {
 			}
 		}
 	private: System::Windows::Forms::Timer^ timer1;
+
 	protected:
 	private: System::ComponentModel::IContainer^ components;
 
@@ -71,8 +72,6 @@ namespace Project3 {
 		}
 #pragma endregion
 	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	
-	
 	}
 	};
 }
