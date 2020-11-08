@@ -67,12 +67,20 @@ public:
 	{
 		alto = value;
 	}
-	 void Mover(Graphics^ g)
+	Rectangle Area()
+	{
+		return Rectangle(x, y, ancho, alto);
+	}
+	Rectangle NextArea()
+	{
+		return Rectangle(x + dx, y + dy, ancho, alto);
+	}
+	virtual void Mover(Graphics^ g)
 	{
 		x += dx;
 		y += dy;
 	}
-	 void Mostrar(Graphics^ g, Bitmap^ img)
+	virtual void Mostrar(Graphics^ g, Bitmap^ img)
 	{
 		g->FillRectangle(Brushes::Black, x, y, ancho, alto);
 	}
