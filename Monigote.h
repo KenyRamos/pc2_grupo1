@@ -18,7 +18,7 @@ private:
 	SpriteMonigote accion;
 
 public:
-	Monigote(Bitmap^ img);
+	Monigote();
 	Monigote(int px, int py, Bitmap^ bmp);
 	void SetAccion(SpriteMonigote value);
 	void Mostrar(Graphics^ g, Bitmap^ bmp);
