@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de recursos\img">
+      <UniqueIdentifier>{1fe45da4-773f-465c-aa63-6ef7b7e1e994}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -74,5 +77,10 @@
     <ClInclude Include="Imagen.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Desktop\sprite_monigote.png">
+      <Filter>Archivos de recursos\img</Filter>
+    </Image>
   </ItemGroup>
 </Project>

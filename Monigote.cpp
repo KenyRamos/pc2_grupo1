@@ -1,28 +1,26 @@
 #include "Monigote.h"
-Monigote::Monigote(Bitmap^ bmp)
+Monigote::Monigote()
 {
+	ancho = alto = 50;
+	dx = 1;
 
+	f = c = 0;
 }
 Monigote::Monigote(int px, int py, Bitmap^ bmp): Entidad()
 {
-	ancho = bmp->Width / 9;
-	alto = bmp->Height / 4;
-	dx = dy = 0;
+	ancho = alto = 50;
+
+	f = c = 0;
 }
 void Monigote::Mostrar (Graphics^ g, Bitmap^ bmp)
 {
-	Rectangle porcion = Rectangle(IDx * ancho, accion * alto, ancho, alto);
+	int ancho = bmp->Width / 9;
+	int alto = bmp->Height / 4;
+	Rectangle porcion = Rectangle(c * ancho, f * alto, ancho, alto);
 	g->DrawImage(bmp, Area(), porcion, GraphicsUnit::Pixel);
-
-	if (dx != 0 || dy != 0)
-	{
-		if (accion >= CaminarArriba && accion <= CaminarAbajo)
-			IDx = (IDx + 1) % 9;
-	}
 }
 
-void Monigote::SetAccion(SpriteMonigote value){
-	accion = value;
+void SetAccion(SpriteMonigote value){
 	
 }
 
@@ -31,7 +29,13 @@ void Monigote::Mover(Graphics^ g){
 		x += dx;
 	if (y + dy >= 0 && y + alto + dy < g->VisibleClipBounds.Height)
 		y += dy;
-	
+
+	x += dx;
+	f++;
+
+	if (f == 7)
+		f = 0;
+
 }
 
 

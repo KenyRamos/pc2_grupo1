@@ -67,12 +67,12 @@ public:
 	{
 		alto = value;
 	}
-	virtual void Mover(Graphics^ g)
+	 void Mover(Graphics^ g)
 	{
 		x += dx;
 		y += dy;
 	}
-	virtual void Mostrar(Graphics^ g, Bitmap^ img)
+	 void Mostrar(Graphics^ g, Bitmap^ img)
 	{
 		g->FillRectangle(Brushes::Black, x, y, ancho, alto);
 	}
