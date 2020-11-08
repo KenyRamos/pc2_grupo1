@@ -1,4 +1,5 @@
 #pragma once
+#include "Juego.h"
 
 namespace Project3 {
 
@@ -21,6 +22,10 @@ namespace Project3 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			juego = new Juego();
+			coins = gcnew Bitmap("sprite_coins.jpg");
+			mapa = gcnew Bitmap("sprite_mapa.png");
+			monigote = gcnew Bitmap("sprite_monigote.png");
 		}
 
 	protected:
@@ -33,13 +38,23 @@ namespace Project3 {
 			{
 				delete components;
 			}
+			delete juego;
+			delete coins;
+			delete mapa;
+			delete monigote;
 		}
+
+	private: System::ComponentModel::IContainer^ components;
+
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		Juego* juego;
+		Bitmap^ coins;
+		Bitmap^ mapa;
+		Bitmap^ monigote;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
