@@ -76,15 +76,15 @@ public:
 	{
 		return Rectangle(x + dx, y + dy, ancho, alto);
 	}
-	virtual void Mover(Graphics^ g)
+	void Mover()
 	{
 		x += dx;
 		y += dy;
 	}
-	virtual void Mostrar(Graphics^ g, Bitmap^ img)
-	{
-		g->FillRectangle(Brushes::Black, x, y, ancho, alto);
-	}
+	//virtual void Mostrar(Graphics^ g, Bitmap^ img)
+	//{
+	//	g->FillRectangle(Brushes::Black, x, y, ancho, alto);
+	//}
 	//Rectangle Area()
 	//{
 	//	return Rectangle(x, y, ancho, alto);

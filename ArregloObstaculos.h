@@ -6,10 +6,17 @@ private:
 	vector<Obstaculo*> arr;
 
 public:
-	ArregloObstaculos(int n, Rectangle obj, Bitmap^ img){
+	ArregloObstaculos(int n, Rectangle obj){
 		for (int i = 0; i < n; i++)
 		{
 			Obstaculo* obs = new Obstaculo();
+			obs->SetX(10);
+			obs->SetY(10);
+			obs->SetAncho(10);
+			obs->SetAlto(10);
+			obs->SetDX(0);
+			obs->SetDY(0);
+
 			if (obs->Area().IntersectsWith(obj) == false && Colision(obs->Area()) == false)
 				arr.push_back(obs);
 			else
@@ -39,7 +46,7 @@ public:
 	{
 		for each (Obstaculo * obs in arr)
 		{
-			obs->Mover(g);
+			obs->Mover();
 		}
 	}
 	void Mostrar(Graphics^ g, Bitmap^ img)

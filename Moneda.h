@@ -12,15 +12,14 @@ enum SpriteMoneda
 class Moneda : public Entidad
 {
 private:
+	int tipo;
 	SpriteMoneda tipo_moneda;
 
 public:
-	Moneda(int px, int py, Bitmap^ bmp);
-	void Mostrar(Graphics^ g, Bitmap^ bmp);
-	void setTipoMoneda(SpriteMoneda tipo_moneda);
+	Moneda();
 	~Moneda();
-
-
-
+	void Mostrar(Graphics^ g, Bitmap^ bmp);
+	void Mover(int anchoPanel, int altoPanel, int direccion);
+	void setTipoMoneda(SpriteMoneda tipo_moneda);
 };
 

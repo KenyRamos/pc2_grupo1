@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Monigote.h"
-
+#include "Obstaculo.h"
+#include "ArregloObstaculos.h"
+#include "ArregloMonedas.h"
 namespace Project3 {
 
 	using namespace System;
@@ -21,6 +23,10 @@ namespace Project3 {
 		int gHeight = this->Height;
 
 		Monigote* pMonigote;
+		ArregloMonedas* pArrMonedas;
+	private: System::Windows::Forms::PictureBox^ pbMoneda;
+
+		   ArregloObstaculos* pArrObstaculos;
 	public:
 		MyForm(void)
 		{
@@ -67,8 +73,10 @@ namespace Project3 {
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->pbMonigote = (gcnew System::Windows::Forms::PictureBox());
 			this->pbFondo = (gcnew System::Windows::Forms::PictureBox());
+			this->pbMoneda = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMonigote))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbFondo))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMoneda))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// timer1
@@ -98,11 +106,22 @@ namespace Project3 {
 			this->pbFondo->TabStop = false;
 			this->pbFondo->Visible = false;
 			// 
+			// pbMoneda
+			// 
+			this->pbMoneda->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pbMoneda.Image")));
+			this->pbMoneda->Location = System::Drawing::Point(12, 39);
+			this->pbMoneda->Name = L"pbMoneda";
+			this->pbMoneda->Size = System::Drawing::Size(1022, 292);
+			this->pbMoneda->SizeMode = System::Windows::Forms::PictureBoxSizeMode::AutoSize;
+			this->pbMoneda->TabIndex = 2;
+			this->pbMoneda->TabStop = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(793, 366);
+			this->Controls->Add(this->pbMoneda);
 			this->Controls->Add(this->pbFondo);
 			this->Controls->Add(this->pbMonigote);
 			this->Name = L"MyForm";
@@ -111,6 +130,7 @@ namespace Project3 {
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMonigote))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbFondo))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbMoneda))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -133,13 +153,17 @@ namespace Project3 {
 
 		System::Drawing::Bitmap^ G1 = gcnew Bitmap(this->pbFondo->Image);
 		System::Drawing::Bitmap^ G2 = gcnew Bitmap(this->pbMonigote->Image);
-
+		System::Drawing::Bitmap^ G3 = gcnew Bitmap(this->pbMoneda->Image);
 
 		//G1->MakeTransparent(G1->GetPixel(1, 1));
 		//G2->MakeTransparent(G2->GetPixel(1, 1));
 		//Mostrar tu jugador en pantalla
 		pMonigote->Mostrar(buffer->Graphics, G2);
 		pMonigote->Mover(g);
+		pArrObstaculos->Mostrar(buffer->Graphics, G1);
+		pArrObstaculos->Mover(g);
+		pArrMonedas->Muestrate(buffer->Graphics, G3);
+		pArrMonedas->Muevete(gWidth, gHeight, 1);
 
 		buffer->Render(g);
 
@@ -154,7 +178,11 @@ namespace Project3 {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		System::Drawing::Bitmap^ G1 = gcnew Bitmap(this->pbMonigote->Image);
 		pMonigote = new Monigote();
-
+		pArrObstaculos = new ArregloObstaculos(10, pMonigote->Area());
+		pArrMonedas = new ArregloMonedas();
+		pArrMonedas->Agregar(1, 100);
+		pArrMonedas->Agregar(1, 100);
+		pArrMonedas->Agregar(1, 100);
 	}
 //private: System::Void.ctor() {
 //	this->InitializeComponent();
